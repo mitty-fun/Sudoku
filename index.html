@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sudoku Solver</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div id="sudoku">
+        <div class="game">
+            <div class="grid">
+                <div v-for="row, x in grid" class="row">
+                    <div v-for="col, y in row" class="col">
+                        <input v-model="grid[x][y]">
+                    </div>
+                </div>
+            </div>
+            <div class="vertical">
+                <div v-for="i in 9">
+                    <div v-show="v_check(i - 1)" class="active"></div>
+                </div>
+            </div>
+            <div class="horizontal">
+                <div v-for="i in 9">
+                    <div v-show="h_check(i - 1)" class="active"></div>
+                </div>
+            </div>
+            <div class="blocks">
+                <div v-for="i in 9">
+                    <div v-show="b_check(i - 1)" class="active"></div>
+                </div>
+            </div>
+        </div>
+        <button @click="newGame">newGame</button>
+        <button @click="resolve">resolve</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="./resolve.js"></script>
+    <script src="./generator.js"></script>
+    <script src="./sudoku.js"></script>
+</body>
+</html>

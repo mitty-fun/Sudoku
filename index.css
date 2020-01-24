@@ -1,0 +1,77 @@
+.game {
+    width: 450px;
+    height: 450px;
+    border: 1px solid black;
+    position: relative;
+}
+
+.row {
+    width: 100%;
+    height: calc(100%/9);
+}
+
+.col {
+    position: relative;
+    display: inline-block;
+    width: calc(100%/9);
+    height: 100%;
+    margin: 0;
+    border: 1px solid #00000050;
+    box-sizing: border-box;
+}
+
+input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    margin: 0;
+    text-align: center;
+    border-width: 0px;
+    font-size: 1rem;
+}
+
+.grid {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.vertical,
+.horizontal,
+.blocks {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    pointer-events: none;
+}
+
+.vertical>div {
+    width: calc(100%/9);
+    height: 100%;
+}
+
+.horizontal>div {
+    width: 100%;
+    height: calc(100%/9);
+
+}
+
+.blocks>div {
+    width: calc(100%/3);
+    height: calc(100%/3);
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.active {
+    width: 100%;
+    height: 100%;
+    background-color: #ff000050;
+}
